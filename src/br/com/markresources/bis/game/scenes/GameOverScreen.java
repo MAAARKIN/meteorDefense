@@ -32,13 +32,16 @@ public class GameOverScreen extends CCLayer implements ButtonDelegate {
 				DeviceSettings.screenHeight() - 130));
 		this.addChild(gameOver);
 
-		//habilitando o touch da camada.
-		this.setIsTouchEnabled(true);
 		//iniciando o button dessa tela
 		this.backToBegin = new Button(Assets.PLAY);
 		this.backToBegin.setPosition(CGPoint.ccp(
 				DeviceSettings.screenWidth() / 2, 
 				DeviceSettings.screenHeight() - 300));
+		this.backToBegin.setDelegate(this);
+		this.addChild(backToBegin);
+		
+		//habilitando o touch da camada.
+		this.setIsTouchEnabled(true);
 	}
 	
 	public CCScene scene() {
