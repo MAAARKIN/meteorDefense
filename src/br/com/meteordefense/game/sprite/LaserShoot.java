@@ -1,4 +1,4 @@
-package br.com.meteordefense.game.model;
+package br.com.meteordefense.game.sprite;
 
 import br.com.meteordefense.util.Assets;
 

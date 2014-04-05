@@ -9,7 +9,7 @@ import org.cocos2d.types.CGPoint;
 
 import br.com.meteordefense.game.control.Button;
 import br.com.meteordefense.game.control.ButtonDelegate;
-import br.com.meteordefense.sprite.ScreenBackground;
+import br.com.meteordefense.game.sprite.ScreenBackground;
 import br.com.meteordefense.util.Assets;
 import br.com.meteordefense.util.DeviceSettings;
 

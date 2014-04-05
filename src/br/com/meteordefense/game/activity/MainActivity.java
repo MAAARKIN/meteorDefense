@@ -1,4 +1,4 @@
-package br.com.meteordefense.activity;
+package br.com.meteordefense.game.activity;
 
 import org.cocos2d.layers.CCScene;
 import org.cocos2d.nodes.CCDirector;

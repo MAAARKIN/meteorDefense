@@ -9,11 +9,11 @@ import org.cocos2d.types.CGPoint;
 import org.cocos2d.types.CGRect;
 
 import br.com.meteordefense.game.interfaces.CollisionEngineDelegate;
-import br.com.meteordefense.game.model.Meteor;
-import br.com.meteordefense.game.model.Player;
-import br.com.meteordefense.game.model.Shoot;
 import br.com.meteordefense.game.scenes.GameOverScreen;
 import br.com.meteordefense.game.scenes.GameScene;
+import br.com.meteordefense.game.sprite.Meteor;
+import br.com.meteordefense.game.sprite.Player;
+import br.com.meteordefense.game.sprite.Shoot;
 
 public class CollisionEngine implements CollisionEngineDelegate {
 	

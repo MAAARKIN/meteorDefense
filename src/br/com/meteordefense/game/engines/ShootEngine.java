@@ -5,7 +5,7 @@ import java.util.List;
 import org.cocos2d.layers.CCLayer;
 
 import br.com.meteordefense.game.interfaces.ShootEngineDelegate;
-import br.com.meteordefense.game.model.Shoot;
+import br.com.meteordefense.game.sprite.Shoot;
 
 public class ShootEngine extends CCLayer implements ShootEngineDelegate {
 

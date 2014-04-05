@@ -7,7 +7,7 @@ import org.cocos2d.layers.CCLayer;
 
 import android.util.Log;
 import br.com.meteordefense.game.interfaces.MeteorsEngineDelegate;
-import br.com.meteordefense.game.model.Meteor;
+import br.com.meteordefense.game.sprite.Meteor;
 import br.com.meteordefense.util.Assets;
 import br.com.meteordefense.util.Runner;
 

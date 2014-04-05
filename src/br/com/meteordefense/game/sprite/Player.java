@@ -1,4 +1,4 @@
-package br.com.meteordefense.game.model;
+package br.com.meteordefense.game.sprite;
 
 import org.cocos2d.actions.interval.CCFadeOut;
 import org.cocos2d.actions.interval.CCScaleBy;
@@ -8,10 +8,10 @@ import org.cocos2d.nodes.CCSprite;
 import org.cocos2d.types.CGPoint;
 
 import br.com.markresources.bis.R;
-import br.com.meteordefense.accelerometer.Accelerometer;
 import br.com.meteordefense.game.interfaces.AccelerometerDelegate;
 import br.com.meteordefense.game.interfaces.ShootEngineDelegate;
 import br.com.meteordefense.game.scenes.GameScene;
+import br.com.meteordefense.util.Accelerometer;
 import br.com.meteordefense.util.Assets;
 import br.com.meteordefense.util.DeviceSettings;
 import br.com.meteordefense.util.Runner;

@@ -1,11 +1,10 @@
-package br.com.meteordefense.accelerometer;
+package br.com.meteordefense.util;
 
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import br.com.meteordefense.game.interfaces.AccelerometerDelegate;
-import br.com.meteordefense.util.DeviceSettings;
 
 public class Accelerometer implements SensorEventListener {
 	

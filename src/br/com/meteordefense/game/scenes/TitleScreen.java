@@ -6,7 +6,7 @@ import org.cocos2d.nodes.CCSprite;
 import org.cocos2d.types.CGPoint;
 
 import br.com.meteordefense.game.control.MenuButtons;
-import br.com.meteordefense.sprite.ScreenBackground;
+import br.com.meteordefense.game.sprite.ScreenBackground;
 import br.com.meteordefense.util.Assets;
 import br.com.meteordefense.util.DeviceSettings;
 

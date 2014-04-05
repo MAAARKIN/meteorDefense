@@ -1,7 +1,7 @@
 package br.com.meteordefense.util;
 
-import br.com.meteordefense.game.model.LaserShoot;
-import br.com.meteordefense.game.model.Shoot;
+import br.com.meteordefense.game.sprite.LaserShoot;
+import br.com.meteordefense.game.sprite.Shoot;
 
 /**
  * Created by Marquinhos on 24/12/13.

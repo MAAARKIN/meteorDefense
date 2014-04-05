@@ -1,4 +1,4 @@
-package br.com.meteordefense.game.model;
+package br.com.meteordefense.game.sprite;
 
 import org.cocos2d.layers.CCLayer;
 import org.cocos2d.opengl.CCBitmapFontAtlas;

@@ -1,6 +1,6 @@
 package br.com.meteordefense.game.interfaces;
 
-import br.com.meteordefense.game.model.Shoot;
+import br.com.meteordefense.game.sprite.Shoot;
 
 
 public interface ShootEngineDelegate {
