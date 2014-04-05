@@ -9,6 +9,7 @@ import android.util.Log;
 import br.com.markresources.bis.game.scenes.GameScene;
 import br.com.markresources.bis.util.Assets;
 import br.com.markresources.bis.util.DeviceSettings;
+import br.com.markresources.bis.util.SoundUtil;
 
 public class MenuButtons extends CCLayer implements ButtonDelegate {
 
@@ -23,19 +24,19 @@ public class MenuButtons extends CCLayer implements ButtonDelegate {
 		this.playButton = new Button(Assets.PLAY);
 		this.highscoredButton = new Button(Assets.HIGHSCORE);
 		this.helpButton = new Button(Assets.HELP);
-		this.soundButton = new Button(Assets.SOUND);
+//		this.soundButton = new Button(Assets.SOUND);
 		
 		this.playButton.setDelegate(this);
 	    this.highscoredButton.setDelegate(this);
 	    this.helpButton.setDelegate(this);
-	    this.soundButton.setDelegate(this);
+//	    this.soundButton.setDelegate(this);
 
 		setButtonspPosition();
 
 		addChild(playButton);
 		addChild(highscoredButton);
 		addChild(helpButton);
-		addChild(soundButton);
+//		addChild(soundButton);
 
 	}
 
@@ -53,10 +54,10 @@ public class MenuButtons extends CCLayer implements ButtonDelegate {
 				DeviceSettings.screenResolution(
 						CGPoint.ccp( DeviceSettings.screenWidth() /2 , DeviceSettings.screenHeight() /2 - 100 ))
 				);
-		soundButton.setPosition(
-				DeviceSettings.screenResolution(
-						CGPoint.ccp( DeviceSettings.screenWidth() /2 - 100,
-								DeviceSettings.screenHeight() - 420 )));
+//		soundButton.setPosition(
+//				DeviceSettings.screenResolution(
+//						CGPoint.ccp( DeviceSettings.screenWidth() /2 - 100,
+//								DeviceSettings.screenHeight() - 420 )));
 	}
 
 	@Override
@@ -72,10 +73,9 @@ public class MenuButtons extends CCLayer implements ButtonDelegate {
 		if (sender.equals(this.helpButton)) {
 			System.out.println("Button clicked: Help");
 		}
-		if (sender.equals(this.soundButton)) {
-			System.out.println("Button clicked: Sound");
-		}
-		System.out.println("Button clicked: Sound");
+//		if (sender.equals(this.soundButton)) {
+//			SoundUtil.stopStartSound();
+//		}
 	}
 
 }

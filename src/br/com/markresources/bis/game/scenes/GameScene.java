@@ -87,8 +87,6 @@ public class GameScene extends CCLayer implements PauseDelegate {
 		this.addChild(this.layerTop);
 
 		this.setIsTouchEnabled(true);
-
-		SoundUtil.playSound(R.raw.music, true); //musica de fundo
 		
 		this.preloadCache(); //colocará em cache os sons, para evitar demora.
 		this.addGameObjects();
@@ -124,6 +122,7 @@ public class GameScene extends CCLayer implements PauseDelegate {
 		
 		this.playerLayer.addChild(player);
 		this.scoreLayer.addChild(getScore());
+		SoundUtil.playSound(R.raw.music, true); //musica de fundo
 	}
 	
 	public void removePlayer() {
@@ -200,8 +199,6 @@ public class GameScene extends CCLayer implements PauseDelegate {
 
 	@Override
 	public void quitGame() {
-		SoundEngine.sharedEngine().setEffectsVolume(0f);
-        SoundEngine.sharedEngine().setSoundVolume(0f);
         CCDirector.sharedDirector().replaceScene(new TitleScreen().scene());		
 	}
 

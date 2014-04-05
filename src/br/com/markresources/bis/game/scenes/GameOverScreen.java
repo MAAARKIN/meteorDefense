@@ -53,7 +53,7 @@ public class GameOverScreen extends CCLayer implements ButtonDelegate {
 	@Override
 	public void buttonClicked(Button sender) {
 		if(sender.equals(this.backToBegin)) {
-			SoundEngine.sharedEngine().pauseSound();
+//			SoundEngine.sharedEngine().pauseSound();
 			CCDirector.sharedDirector().replaceScene(new TitleScreen().scene());
 		}
 	}

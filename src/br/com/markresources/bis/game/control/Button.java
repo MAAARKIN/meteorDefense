@@ -41,4 +41,8 @@ public class Button extends CCLayer {
 	    }
 	    return true;
 	}
+	
+	public void changeImage(String buttonImage) {
+		this.buttonImage = CCSprite.sprite(buttonImage);
+	}
 }

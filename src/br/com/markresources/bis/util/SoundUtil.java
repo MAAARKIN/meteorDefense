@@ -3,10 +3,9 @@ package br.com.markresources.bis.util;
 import org.cocos2d.nodes.CCDirector;
 import org.cocos2d.sound.SoundEngine;
 
-import br.com.markresources.bis.R;
-
 public class SoundUtil extends SoundEngine {
 	
+	private static boolean muted = false;
 	public SoundUtil() {
 		// TODO Auto-generated constructor stub
 	}
@@ -15,9 +14,8 @@ public class SoundUtil extends SoundEngine {
 		sharedEngine().playEffect(CCDirector.sharedDirector().getActivity(), resIdSound);
 	}
 	
-	
 	public static void playSound(int resIdSound, boolean loop) {
 		sharedEngine().playSound(CCDirector.sharedDirector().getActivity(), resIdSound, loop);
 	}
-
+	
 }
