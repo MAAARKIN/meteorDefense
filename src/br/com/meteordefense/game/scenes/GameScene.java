@@ -122,7 +122,8 @@ public class GameScene extends CCLayer implements PauseDelegate {
 		
 		this.playerLayer.addChild(player);
 		this.scoreLayer.addChild(getScore());
-		SoundUtil.playSound(R.raw.music, true); //musica de fundo
+		
+		SoundEngine.sharedEngine().playSound(CCDirector.sharedDirector().getActivity(), R.raw.music, true);
 	}
 	
 	public void removePlayer() {
@@ -139,11 +140,6 @@ public class GameScene extends CCLayer implements PauseDelegate {
 		
 		// Inicia o status do jogo
 		Runner.setGamePlaying(true);
-//	    Runner.setGamePaused(false);
-		
-		// pause
-//	    SoundEngine.sharedEngine().setEffectsVolume(1f);
-//	    SoundEngine.sharedEngine().setSoundVolume(1f);
 	    
 	    // efetua o agendamento das verificacoes das colisoes.
 		this.schedule("checkHits");
@@ -174,9 +170,11 @@ public class GameScene extends CCLayer implements PauseDelegate {
 	}
 	
 	private void preloadCache() {
-		SoundUtil.playEffect(R.raw.bang);
-		SoundUtil.playEffect(R.raw.shoot);
-		SoundUtil.playEffect(R.raw.over);
+		SoundEngine.sharedEngine().preloadEffect(CCDirector.sharedDirector().getActivity(), R.raw.bang);
+		SoundEngine.sharedEngine().preloadEffect(CCDirector.sharedDirector().getActivity(), R.raw.shoot);
+		SoundEngine.sharedEngine().preloadEffect(CCDirector.sharedDirector().getActivity(), R.raw.over);
+		SoundEngine.sharedEngine().preloadSound(CCDirector.sharedDirector().getActivity(), R.raw.music);
+		
 	}
 
 	public Score getScore() {

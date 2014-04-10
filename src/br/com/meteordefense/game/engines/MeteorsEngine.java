@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Random;
 
 import org.cocos2d.layers.CCLayer;
+import org.cocos2d.nodes.CCTextureCache;
+import org.cocos2d.opengl.CCTexture2D;
 
 import android.util.Log;
 import br.com.meteordefense.game.interfaces.MeteorsEngineDelegate;
@@ -43,6 +45,9 @@ public class MeteorsEngine extends CCLayer implements MeteorsEngineDelegate {
 		meteorsLayer.addChild(meteor);
 		// chama o schedule para update
 		meteor.start();
+		CCTexture2D sharedTexture = CCTextureCache.sharedTextureCache().addImage(Assets.NAVE);
+		meteor.setTexture(sharedTexture);
+//		meteor.setTexture()
 		// adiciona o meteoro nos arrays
 		this.meteorsArray.add(meteor);
 		

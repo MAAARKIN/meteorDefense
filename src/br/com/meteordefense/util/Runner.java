@@ -9,6 +9,7 @@ package br.com.meteordefense.util;
 public class Runner {
 	
 	private static boolean isGamePlaying;
+	private static boolean soundPaused = false;
 //    private static boolean isGamePaused;
     
     private static Runner runner = null;
@@ -38,6 +39,14 @@ public class Runner {
 
 	public static void setGamePlaying(boolean isGamePlaying) {
 		Runner.isGamePlaying = isGamePlaying;
+	}
+
+	public static boolean isSoundPaused() {
+		return soundPaused;
+	}
+
+	public static void setSoundPaused(boolean soundPaused) {
+		Runner.soundPaused = soundPaused;
 	}
     
 }

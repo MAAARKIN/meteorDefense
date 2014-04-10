@@ -45,12 +45,12 @@ public class CollisionEngine implements CollisionEngineDelegate {
 		boolean result = false;
 		for (int i = 0; i < array1.size(); i++) {
 			// Pega objeto do primeiro array
-			CGRect rect1 = getBoarders(array1.get(i));
+			CGRect rectangleSpriteArray1 = getBoarders(array1.get(i));
 			for (int j = 0; j < array2.size(); j++) {
 				// Pega objeto do segundo array
-				CGRect rect2 = getBoarders(array2.get(j));
+				CGRect rectangleSpriteArray2 = getBoarders(array2.get(j));
 				// Verifica colisão, faz uma interseção entre as areas dos sprites obtidas.
-				if (CGRect.intersects(rect1, rect2)) {
+				if (CGRect.intersects(rectangleSpriteArray1, rectangleSpriteArray2)) {
 					System.out.println("Colision Detected: " + nomeDoMetodo);
 					result = true;
 					

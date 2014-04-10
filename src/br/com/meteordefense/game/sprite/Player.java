@@ -32,10 +32,13 @@ public class Player extends CCSprite implements AccelerometerDelegate {
 	private ShootEngineDelegate delegate;
 	
 	public Player() {
+		//informa qual a imagem desse Sprite
 		super(Assets.NAVE);
 		setPositionX(DeviceSettings.screenWidth() / 2);
-		setPositionY(100);
+		setPositionY(100);		
+		//define a posição do sprite na tela passando a posição X e Y.
 		setPosition(getPositionX(), getPositionY());
+		//inicia o agendamento do método update
 		this.schedule("update");
 	}
 	
@@ -145,9 +148,6 @@ public class Player extends CCSprite implements AccelerometerDelegate {
 
 	@Override
 	public void accelerometerDidAccelerate(float x, float y) {
-		System.out.println("Eixo X: " + x);
-		System.out.println("Eixo Y: " + y);
-		
 		this.currentAccelX = x;
 		this.currentAccelY = y;
 	}

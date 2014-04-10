@@ -2,6 +2,7 @@ package br.com.meteordefense.game.control;
 
 import org.cocos2d.layers.CCLayer;
 import org.cocos2d.nodes.CCDirector;
+import org.cocos2d.sound.SoundEngine;
 import org.cocos2d.transitions.CCFadeTransition;
 import org.cocos2d.types.CGPoint;
 
@@ -9,7 +10,7 @@ import android.util.Log;
 import br.com.meteordefense.game.scenes.GameScene;
 import br.com.meteordefense.util.Assets;
 import br.com.meteordefense.util.DeviceSettings;
-import br.com.meteordefense.util.SoundUtil;
+import br.com.meteordefense.util.Runner;
 
 public class MenuButtons extends CCLayer implements ButtonDelegate {
 
@@ -24,19 +25,19 @@ public class MenuButtons extends CCLayer implements ButtonDelegate {
 		this.playButton = new Button(Assets.PLAY);
 		this.highscoredButton = new Button(Assets.HIGHSCORE);
 		this.helpButton = new Button(Assets.HELP);
-//		this.soundButton = new Button(Assets.SOUND);
+		this.soundButton = new Button(Assets.SOUND);
 		
 		this.playButton.setDelegate(this);
 	    this.highscoredButton.setDelegate(this);
 	    this.helpButton.setDelegate(this);
-//	    this.soundButton.setDelegate(this);
+	    this.soundButton.setDelegate(this);
 
 		setButtonspPosition();
 
 		addChild(playButton);
 		addChild(highscoredButton);
 		addChild(helpButton);
-//		addChild(soundButton);
+		addChild(soundButton);
 
 	}
 
@@ -54,10 +55,10 @@ public class MenuButtons extends CCLayer implements ButtonDelegate {
 				DeviceSettings.screenResolution(
 						CGPoint.ccp( DeviceSettings.screenWidth() /2 , DeviceSettings.screenHeight() /2 - 100 ))
 				);
-//		soundButton.setPosition(
-//				DeviceSettings.screenResolution(
-//						CGPoint.ccp( DeviceSettings.screenWidth() /2 - 100,
-//								DeviceSettings.screenHeight() - 420 )));
+		soundButton.setPosition(
+				DeviceSettings.screenResolution(
+						CGPoint.ccp( DeviceSettings.screenWidth() /2 - 100,
+								DeviceSettings.screenHeight() - 420 )));
 	}
 
 	@Override
@@ -73,9 +74,13 @@ public class MenuButtons extends CCLayer implements ButtonDelegate {
 		if (sender.equals(this.helpButton)) {
 			System.out.println("Button clicked: Help");
 		}
-//		if (sender.equals(this.soundButton)) {
-//			SoundUtil.stopStartSound();
-//		}
+		if (sender.equals(this.soundButton)) {
+			if(SoundEngine.sharedEngine().isMute()) {
+				SoundEngine.sharedEngine().unmute();
+			} else {
+				SoundEngine.sharedEngine().mute();
+			}
+		}
 	}
 
 }
