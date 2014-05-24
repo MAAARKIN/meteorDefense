@@ -43,13 +43,13 @@ public class MainActivity extends Activity {
 	
 	@Override
 	protected void onDestroy() {
-		SoundUtil.sharedEngine().pauseSound();
+		SoundUtil.pauseSound();
 		super.onDestroy();
 	}
 	
 	@Override
 	protected void onPause() {
-		SoundUtil.sharedEngine().pauseSound();
+		SoundUtil.pauseSound();
 		super.onPause();
 	}
 	

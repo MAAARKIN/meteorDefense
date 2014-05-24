@@ -52,7 +52,7 @@ public class FinalScreen extends CCLayer implements ButtonDelegate {
 	@Override
 	public void buttonClicked(Button sender) {
 		if(sender.equals(beginButton)) {
-			SoundUtil.sharedEngine().pauseSound();
+			SoundUtil.pauseSound();
 			CCDirector.sharedDirector().replaceScene(new TitleScreen().scene());
 		}
 	}

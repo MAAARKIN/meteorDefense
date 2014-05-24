@@ -118,7 +118,7 @@ public class Player extends CCSprite implements AccelerometerDelegate {
 	
 	public void explode() {
 		SoundUtil.playEffect(R.raw.over);
-		SoundUtil.sharedEngine().pauseSound();
+		SoundUtil.pauseSound();
 		//para o agendamento
 		this.unschedule("update");
 		

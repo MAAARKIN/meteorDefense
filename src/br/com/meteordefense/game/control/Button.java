@@ -4,6 +4,8 @@ import org.cocos2d.events.CCTouchDispatcher;
 import org.cocos2d.layers.CCLayer;
 import org.cocos2d.nodes.CCDirector;
 import org.cocos2d.nodes.CCSprite;
+import org.cocos2d.nodes.CCTextureCache;
+import org.cocos2d.opengl.CCTexture2D;
 import org.cocos2d.types.CGPoint;
 import org.cocos2d.types.CGRect;
 
@@ -18,6 +20,11 @@ public class Button extends CCLayer {
 		this.setIsTouchEnabled(true);
 		this.buttonImage = CCSprite.sprite(buttonImage);
 		addChild(this.buttonImage);
+	}
+	
+	public void changeSprite(String image) {
+		CCTexture2D sharedTexture = CCTextureCache.sharedTextureCache().addImage(image);
+		this.buttonImage.setTexture(sharedTexture);
 	}
 	
 	public void setDelegate(ButtonDelegate sender) {

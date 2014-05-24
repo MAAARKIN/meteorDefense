@@ -122,8 +122,6 @@ public class GameScene extends CCLayer implements PauseDelegate {
 		
 		this.playerLayer.addChild(player);
 		this.scoreLayer.addChild(getScore());
-		
-		SoundEngine.sharedEngine().playSound(CCDirector.sharedDirector().getActivity(), R.raw.music, true);
 	}
 	
 	public void removePlayer() {
@@ -170,11 +168,9 @@ public class GameScene extends CCLayer implements PauseDelegate {
 	}
 	
 	private void preloadCache() {
-		SoundEngine.sharedEngine().preloadEffect(CCDirector.sharedDirector().getActivity(), R.raw.bang);
-		SoundEngine.sharedEngine().preloadEffect(CCDirector.sharedDirector().getActivity(), R.raw.shoot);
-		SoundEngine.sharedEngine().preloadEffect(CCDirector.sharedDirector().getActivity(), R.raw.over);
-		SoundEngine.sharedEngine().preloadSound(CCDirector.sharedDirector().getActivity(), R.raw.music);
-		
+		SoundUtil.preloadEffect(R.raw.bang);
+		SoundUtil.preloadEffect(R.raw.shoot);
+		SoundUtil.preloadEffect(R.raw.over);
 	}
 
 	public Score getScore() {

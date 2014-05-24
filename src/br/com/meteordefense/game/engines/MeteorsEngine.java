@@ -45,9 +45,6 @@ public class MeteorsEngine extends CCLayer implements MeteorsEngineDelegate {
 		meteorsLayer.addChild(meteor);
 		// chama o schedule para update
 		meteor.start();
-		CCTexture2D sharedTexture = CCTextureCache.sharedTextureCache().addImage(Assets.NAVE);
-		meteor.setTexture(sharedTexture);
-//		meteor.setTexture()
 		// adiciona o meteoro nos arrays
 		this.meteorsArray.add(meteor);
 		

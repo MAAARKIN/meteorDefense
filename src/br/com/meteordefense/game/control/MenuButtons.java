@@ -11,6 +11,7 @@ import br.com.meteordefense.game.scenes.GameScene;
 import br.com.meteordefense.util.Assets;
 import br.com.meteordefense.util.DeviceSettings;
 import br.com.meteordefense.util.Runner;
+import br.com.meteordefense.util.SoundUtil;
 
 public class MenuButtons extends CCLayer implements ButtonDelegate {
 
@@ -25,7 +26,11 @@ public class MenuButtons extends CCLayer implements ButtonDelegate {
 		this.playButton = new Button(Assets.PLAY);
 		this.highscoredButton = new Button(Assets.HIGHSCORE);
 		this.helpButton = new Button(Assets.HELP);
-		this.soundButton = new Button(Assets.SOUND);
+		if(SoundUtil.isMute()) {
+			this.soundButton = new Button(Assets.SOUND_OFF);
+		} else {
+			this.soundButton = new Button(Assets.SOUND);			
+		}
 		
 		this.playButton.setDelegate(this);
 	    this.highscoredButton.setDelegate(this);
@@ -75,10 +80,12 @@ public class MenuButtons extends CCLayer implements ButtonDelegate {
 			System.out.println("Button clicked: Help");
 		}
 		if (sender.equals(this.soundButton)) {
-			if(SoundEngine.sharedEngine().isMute()) {
-				SoundEngine.sharedEngine().unmute();
+			if(SoundUtil.isMute()) {
+				SoundUtil.unmute();
+				this.soundButton.changeSprite(Assets.SOUND);
 			} else {
-				SoundEngine.sharedEngine().mute();
+				SoundUtil.mute();
+				this.soundButton.changeSprite(Assets.SOUND_OFF);
 			}
 		}
 	}
